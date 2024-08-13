@@ -1,12 +1,9 @@
 from PIL import Image
 import numpy as np
-# import matplotlib.pyplot as plt
 
 
 def ft_load(path: str) -> np.ndarray:
-    """Load """
-    if (path.__class__ != str):
-        raise Exception("Argument not a string")
+    """Load image to 3D array"""
     try:
         with Image.open(path) as img:
             pixels = img.load()
@@ -14,6 +11,7 @@ def ft_load(path: str) -> np.ndarray:
 
             print(f"Image size: {width}x{height}")
             ret = []
+            ret1 = []
             a = 0
             for i in range(height):
                 if a == 0:
@@ -25,15 +23,13 @@ def ft_load(path: str) -> np.ndarray:
                     ret1.append(pixels[j, i])
         ret.append(ret1)
         r = np.array(ret)
+        return (r)
     except Exception as e:
-        print(f"An unexpected error occurred: {e}")
-        return None
-    print(r)
-    return r
+        print(f"An Error: {e}")
 
 
 def main():
-    ft_load("tester.py")
+    return 1
 
 
 if __name__ == "__main__":

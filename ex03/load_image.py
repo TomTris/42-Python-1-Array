@@ -2,9 +2,11 @@ from PIL import Image
 import numpy as np
 
 
-def ft_load() -> np.ndarray:
+def ft_load(path: str) -> np.ndarray:
     """Load image to 3D array"""
-    with Image.open("animal.jpeg") as img:
+    if (path.__class__ != str):
+        raise Exception("Argument not a string")
+    with Image.open(path) as img:
         pixels = img.load()
         width, height = img.size
 
@@ -26,10 +28,7 @@ def ft_load() -> np.ndarray:
 
 
 def main():
-    try:
-        print(ft_load())
-    except Exception as e:
-        print(f"An Error: {e}")
+    return
 
 
 if __name__ == "__main__":
