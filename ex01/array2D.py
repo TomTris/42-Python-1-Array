@@ -7,7 +7,7 @@ def slice_me(family: list, start: int, end: int) -> list:
 			print("Error")
 			return []
 		for nbr in xD:
-			if nbr.__class__ != int:
+			if nbr.__class__ != int and nbr.__class__ != float:
 				print("Error")
 				return []
 	family = np.array(family)

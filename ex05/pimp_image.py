@@ -53,7 +53,7 @@ def ft_grey(array) -> array:
     arr = np.sum([ar1, ar2, ar3], axis=0)
     arr1[:, :, 0] = arr
     arr1[:, :, 1] = arr
-    arr1[:, :, ] = arr
+    arr1[:, :, 2] = arr
     plt.imshow(arr1)
     plt.show()
     return arr1
